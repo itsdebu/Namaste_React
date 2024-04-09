@@ -1,0 +1,90 @@
+Namaste React:
+
+Hello World In HTML:
+<h1> Hello world </h1>
+
+Hello World with Javascript:
+
+In Html: Create a div with id anything:
+<div id: "root"> </div>
+
+Write Script for this to Append the H1 tag in div:
+
+const heading = document.createElement("h1");
+        heading.innerHTML = "Hello World From JavaScript";
+
+        const root = document.getElementById("root")
+
+root.appendChild(heading); //append in div
+root.removeChild(heading) //remove from the div
+
+
+Hello world with React:
+
+Step 1: first we have to attach cdn links of react and add into our html file.
+
+Step2: then create a seperate js file in which we write the react code and attach it with the html.
+
+Step3: write:
+
+To create a element in react we write:
+
+const heading= [React.createElement("h1", { id: "parent1" },"Hello from React" }
+=> this takes 3 things 1st is tag, 2nd is attrbutes like id, class and 3rd is the thing we have to show it there on our page.
+
+then,
+we have to create a root using ReactDOM:
+const root = ReactDOM.createRoot(document.getElementById("root"));
+
+and then render is use to append/replace that in tag where are putting it.
+
+root.render(parent);
+
+
+We can perform multiple things with it:
+Like creating nested divs and creating multiple tags in 1 div:
+
+const parent = [React.createElement("div", { id: "parent1" },
+
+    [
+        React.createElement("div", { id: "child1" },
+            [
+                React.createElement("h1", {}, "I am h1 tag"),
+                React.createElement("h2", {}, "I am h2 tag")
+            ]
+        ),
+        React.createElement("div", { id: "child2" },
+            [
+                React.createElement("h1", {}, "I am h1 tag"),
+                React.createElement("h2", {}, "I am h2 tag")
+            ]
+        )
+    ]
+),
+React.createElement("div", { id: "mainParent" }, React.createElement("div", { id: "parent2" },
+
+    [
+        React.createElement("div", { id: "child1" },
+            [
+                React.createElement("h1", {}, "I am h1 tag"),
+                React.createElement("h2", {}, "I am h2 tag")
+            ]
+        ),
+        React.createElement("div", { id: "child2" },
+            [
+                React.createElement("h1", {}, "I am h1 tag"),
+                React.createElement("h2", {}, "I am h2 tag")
+            ]
+        )
+    ]
+))
+]
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+
+root.render(parent);
+
+here to create multiple tags we have to pass it in array []
+ and the createElement option is object till we render it....
+
+At the space of statement 3rd thing we will create another element for nesting..
